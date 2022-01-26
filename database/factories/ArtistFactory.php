@@ -12,6 +12,6 @@ $factory->define(Artist::class, function (Faker $faker) {
         'date_of_birth' => $faker->date(),
         'biography' => $faker -> text(300),
         'genre'=> $faker-> word(),
-        'website'=> $faker-> word()
+        'website'=> $faker->url()
     ];
 });
