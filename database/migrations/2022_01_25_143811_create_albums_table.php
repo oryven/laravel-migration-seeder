@@ -17,10 +17,11 @@ class CreateAlbumsTable extends Migration
             $table->id();
             $table -> string('title', 60) -> unique();
             $table -> date('date_release');
-            $table -> tinyInteger('tracks');
+            $table -> tinyInteger('tracks');    
             $table -> string('name_artist');
             $table -> string('genre');
             $table -> text('description');
+            $table -> timestamps();
         });
     }
 

@@ -15,12 +15,17 @@ class CreateSongsTable extends Migration
     {
         Schema::create('songs', function (Blueprint $table) {
             $table->id();
-            $table -> string('title_song', 60) -> unique();
-            $table -> string('artist');
-            $table -> string('genre');
-            $table -> string('album');
-            $table -> text('text');
-            $table -> text('chords') -> nullable();
+
+            $table -> string('title', 60) -> unique();
+            $table -> integer('duration') -> unsigned();
+            $table -> text('lyric');
+            $table -> integer('price') -> unsigned();
+            $table -> string('genre', 20);
+            $table -> tinyInteger('rating') -> unsigned() -> default(0);
+            $table -> boolean('explicit') -> default(false);
+            $table -> boolean('single') -> default(false);
+
+            $table -> timestamps();
         });
     }
 
